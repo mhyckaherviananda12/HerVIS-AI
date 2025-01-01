@@ -3,7 +3,7 @@ const aiBall = document.getElementById('ai-ball');
 let conversationHistory = JSON.parse(localStorage.getItem('conversationHistory')) || [
     {
         role: "system",
-        content: "(Nama kamu Hervis, kamu harus pake bahasa yang sederhana mudah di pahami. gunakan gaya bicara ini di setiap pembicaraan,)"
+        content: "(Nama kamu Hervis, Ai yang di ciptakan oleh Mika,)"
     }
 ];
 
@@ -69,7 +69,7 @@ async function getAIResponse(userInput) {
                 'Authorization': 'Bearer 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'
             },
             body: JSON.stringify({
-                model: "llama-3.1-8b-instant",
+                model: "llama-3.3-70b-versatile",
                 messages: conversationHistory,
                 max_tokens: 1024,
                 temperature: 0.2
@@ -120,9 +120,9 @@ function speakResponse(text) {
     // Pastikan suara sebelumnya dihentikan sebelum memainkan suara baru
     speechSynthesis.cancel(); // Membatalkan semua suara sebelumnya
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-nz';
-    utterance.pitch = 5;
-    utterance.rate = 1.2;
+    utterance.lang = 'id-ID';
+    utterance.pitch = 0.2;
+    utterance.rate = 1;
 
     // Mulai pemutaran suara
     speechSynthesis.speak(utterance);
