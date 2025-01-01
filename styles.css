@@ -6,9 +6,9 @@
 }
 
 body {
-    background: linear-gradient(45deg, #1e3c72, #2a5298, #4ca1af, #7dcdc9);
-    background-size: 400% 400%; /* Membuat ukuran background lebih besar */
-    animation: moveBackground 15s ease infinite; /* Animasi bergerak latar belakang */
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364, #00d4ff, #8e2de2, #4a00e0);
+    background-size: 800% 800%;
+    animation: moveBackground 15s ease infinite;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,29 +31,28 @@ body {
 .ai-ball {
     width: 120px;
     height: 120px;
-    background-color: #0066cc;
+    background: linear-gradient(145deg, #203a43, #00d4ff);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 212, 255, 0.3);
     position: relative;
     overflow: hidden;
-    animation: shake 1s infinite; /* Menambahkan efek shake saat idle */
+    animation: pulse 2s infinite;
 }
 
 .ai-ball:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5); /* Efek hover lebih terang */
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.8), 0 0 60px rgba(0, 212, 255, 0.5);
 }
 
-/* Tombol untuk bicara */
 .speak-button {
     position: absolute;
-    bottom: -10px; /* Geser tombol lebih ke bawah */
-    background: linear-gradient(135deg, #ff7a18, #ff4300);
+    bottom: -10px;
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
     color: white;
     border: none;
     border-radius: 30px;
@@ -62,56 +61,35 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 10px rgba(255, 67, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(138, 43, 226, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100px;
     height: 42px;
-    position: relative;
-    overflow: hidden;
 }
 
-.speak-button .circle {
-    width: 40px;
-    height: 40px;
-    background: rgb(255, 92, 51, 0.7);
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.speak-button .mic-icon {
-    width: 20px;
-    height: 20px;
-}
-
-/* Hover efek tombol */
 .speak-button:hover {
-    background: linear-gradient(135deg, #ff9b3b, #ff5c33);
+    background: linear-gradient(135deg, #9d50bb, #6e48aa);
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(255, 92, 51, 0.7);
+    box-shadow: 0 6px 15px rgba(138, 43, 226, 0.9);
 }
 
 .speak-button:active {
     transform: translateY(2px);
-    box-shadow: 0 3px 8px rgba(255, 67, 0, 0.5);
+    box-shadow: 0 3px 8px rgba(138, 43, 226, 0.5);
 }
 
-/* Efek animasi lainnya */
 .ai-ball.mic-listening {
-    background-color: #f73710;
-    box-shadow: 0 0 20px rgba(171, 123, 91, 0.5);
-    animation: pulse 1s infinite ease-in-out, glow 1s infinite alternate; /* Pulse dan glow bersamaan */
+    background: linear-gradient(145deg, #ff0080, #ff416c);
+    box-shadow: 0 0 20px rgba(255, 65, 108, 0.6), 0 0 40px rgba(255, 65, 108, 0.3);
+    animation: glow 1s infinite alternate;
 }
 
 .ai-ball.mic-talking {
-    background-color: #fcfcfc;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-    animation: bounce 0.5s ease-in-out infinite, spin 2s linear infinite; /* Bounce dan spin bersamaan */
+    background: linear-gradient(145deg, #24c6dc, #514a9d);
+    box-shadow: 0 0 20px rgba(36, 198, 220, 0.6), 0 0 40px rgba(36, 198, 220, 0.3);
+    animation: bounce 1s ease-in-out infinite;
 }
 
 @keyframes pulse {
@@ -119,7 +97,7 @@ body {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
     100% {
         transform: scale(1);
@@ -128,10 +106,10 @@ body {
 
 @keyframes glow {
     0% {
-        box-shadow: 0 0 20px rgba(255, 102, 0, 0.2);
+        box-shadow: 0 0 20px rgba(255, 65, 108, 0.4), 0 0 40px rgba(255, 65, 108, 0.2);
     }
     100% {
-        box-shadow: 0 0 35px rgba(255, 102, 0, 1);
+        box-shadow: 0 0 30px rgba(255, 65, 108, 0.7), 0 0 50px rgba(255, 65, 108, 0.5);
     }
 }
 
@@ -140,46 +118,32 @@ body {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-15px);
+        transform: translateY(-10px);
     }
     100% {
         transform: translateY(0);
     }
 }
 
-@keyframes shake {
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(-5deg);
-    }
-    50% {
-        transform: rotate(5deg);
-    }
-    75% {
-        transform: rotate(-5deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-/* Animasi latar belakang bergerak */
 @keyframes moveBackground {
     0% {
-        background-position: 0% 0%;
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg);
     }
     25% {
-        background-position: 100% 0%;
+        background-position: 50% 100%;
+        filter: hue-rotate(90deg);
     }
     50% {
-        background-position: 100% 100%;
+        background-position: 100% 50%;
+        filter: hue-rotate(180deg);
     }
     75% {
-        background-position: 0% 100%;
+        background-position: 50% 0%;
+        filter: hue-rotate(270deg);
     }
     100% {
-        background-position: 0% 0%;
+        background-position: 0% 50%;
+        filter: hue-rotate(360deg);
     }
 }
