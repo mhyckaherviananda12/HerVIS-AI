@@ -120,9 +120,9 @@ function speakResponse(text) {
     // Pastikan suara sebelumnya dihentikan sebelum memainkan suara baru
     speechSynthesis.cancel(); // Membatalkan semua suara sebelumnya
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'id-ID';
-    utterance.pitch = 1;
-    utterance.rate = 1.1;
+    utterance.lang = 'en-nz';
+    utterance.pitch = 5;
+    utterance.rate = 1.2;
 
     // Mulai pemutaran suara
     speechSynthesis.speak(utterance);
