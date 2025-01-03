@@ -66,7 +66,7 @@ async function getAIResponse(userInput) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer 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'
+                'Authorization': 'Bearer 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'
             },
             body: JSON.stringify({
                 model: "llama-3.3-70b-versatile",
