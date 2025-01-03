@@ -3,7 +3,7 @@ const aiBall = document.getElementById('ai-ball');
 let conversationHistory = JSON.parse(localStorage.getItem('conversationHistory')) || [
     {
         role: "system",
-        content: "(Nama kamu Hervis, Ai yang di ciptakan oleh Mika,)"
+        content: "(Nama kamu Hervis, Ai yang di buat dan di ciptakan dan kembangkan oleh mika dengan bantuan teknologi llama-3.3-70b untuk sebuah penelitian dan pembelajaran,)"
     }
 ];
 
@@ -72,7 +72,7 @@ async function getAIResponse(userInput) {
                 model: "llama-3.3-70b-versatile",
                 messages: conversationHistory,
                 max_tokens: 1024,
-                temperature: 0.2
+                temperature: 0.1
             })
         });
 
@@ -122,7 +122,7 @@ function speakResponse(text) {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'id-ID';
     utterance.pitch = 0.2;
-    utterance.rate = 2;
+    utterance.rate = 1.8;
 
     // Mulai pemutaran suara
     speechSynthesis.speak(utterance);
