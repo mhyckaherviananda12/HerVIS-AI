@@ -20,7 +20,7 @@ async function startListening() {
 
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
         const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-        recognition.lang = 'id-ID';
+        recognition.lang = 'en-US';
         recognition.interimResults = false;  // Jangan tampilkan hasil sementara
         recognition.maxAlternatives = 1;
 
