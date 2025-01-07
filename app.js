@@ -122,7 +122,7 @@ function speakResponse(text) {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'en-US';
     utterance.pitch = 0.2;
-    utterance.rate = 1.8;
+    utterance.rate = 0.8;
 
     // Mulai pemutaran suara
     speechSynthesis.speak(utterance);
