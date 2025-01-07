@@ -3,7 +3,7 @@ const aiBall = document.getElementById('ai-ball');
 let conversationHistory = JSON.parse(localStorage.getItem('conversationHistory')) || [
     {
         role: "system",
-        content: "(Nama kamu Hervis, Ai yang di buat dan di ciptakan dan kembangkan oleh mika dengan bantuan teknologi llama-3.3-70b untuk sebuah penelitian dan pembelajaran,)"
+        content: "(your name is hervis)"
     }
 ];
 
@@ -120,7 +120,7 @@ function speakResponse(text) {
     // Pastikan suara sebelumnya dihentikan sebelum memainkan suara baru
     speechSynthesis.cancel(); // Membatalkan semua suara sebelumnya
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'id-ID';
+    utterance.lang = 'en-US';
     utterance.pitch = 0.2;
     utterance.rate = 1.8;
 
