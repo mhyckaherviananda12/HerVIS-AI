@@ -69,7 +69,7 @@ async function getAIResponse(userInput) {
                 'Authorization': 'Bearer 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'
             },
             body: JSON.stringify({
-                model: "mixtral-8x7b-32768",
+                model: "llama-3.3-70b-versatile",
                 messages: conversationHistory,
                 max_tokens: 1024,
                 temperature: 0.1
