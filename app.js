@@ -3,7 +3,7 @@ const aiBall = document.getElementById('ai-ball');
 let conversationHistory = JSON.parse(localStorage.getItem('conversationHistory')) || [
     {
         role: "system",
-        content: "(your name is hervis)"
+        content: "(namamu HERVIS)"
     }
 ];
 
@@ -20,7 +20,7 @@ async function startListening() {
 
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
         const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-        recognition.lang = 'en-US';
+        recognition.lang = 'id-ID';
         recognition.interimResults = false;  // Jangan tampilkan hasil sementara
         recognition.maxAlternatives = 1;
 
@@ -120,7 +120,7 @@ function speakResponse(text) {
     // Pastikan suara sebelumnya dihentikan sebelum memainkan suara baru
     speechSynthesis.cancel(); // Membatalkan semua suara sebelumnya
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US';
+    utterance.lang = 'id-ID';
     utterance.pitch = 0.2;
     utterance.rate = 1;
 
